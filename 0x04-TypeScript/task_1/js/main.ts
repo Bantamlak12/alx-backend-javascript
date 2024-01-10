@@ -42,3 +42,31 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 };
 
 printTeacher("John", "Doe");
+
+// Taks 4
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClass;
+}
+
+class StudentClass {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+const studentConstructor: StudentConstructor = StudentClass;
+const student1 = new StudentClass("John", "Smith");
+console.log(student1.workOnHomework());
+console.log(student1.displayName());
