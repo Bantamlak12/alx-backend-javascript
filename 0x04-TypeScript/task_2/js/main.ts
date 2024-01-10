@@ -37,11 +37,9 @@ class Teacher implements TeacherInterface {
 
 const createEmployee = (salary: number | string) => {
   if (typeof salary === "number" && salary < 500) {
-    const teacher: TeacherInterface = new Teacher();
-    return teacher;
+    return new Teacher();
   } else {
-    const director: DirectorInterface = new Director();
-    return director;
+    return new Director();
   }
 };
 
