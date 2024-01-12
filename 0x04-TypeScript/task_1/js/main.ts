@@ -44,7 +44,7 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 printTeacher("John", "Doe");
 
 // Taks 4
-interface StudentConstructor {
+export interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClass;
 }
 
