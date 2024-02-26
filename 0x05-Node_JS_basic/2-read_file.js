@@ -29,7 +29,7 @@ const countStudents = (path) => {
     }
   }
 
-  console.log(totalStudent);
+  console.log(`Number of students: ${totalStudent}`);
   for (const field in studentByField) {
     if (field) {
       console.log(
