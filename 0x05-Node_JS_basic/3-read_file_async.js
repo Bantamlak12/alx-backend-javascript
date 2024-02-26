@@ -32,9 +32,14 @@ const countStudents = async (path) => {
       }
     }
 
+    let response = `Number of students: ${totalStudent}\n`;
     console.log(`Number of students: ${totalStudent}`);
     for (const field in studentByField) {
       if (field) {
+        response += `Number of students in ${field}: ${
+          studentByField[field]
+        }. List: ${names[field].join(', ')}\n`;
+
         console.log(
           `Number of students in ${field}: ${
             studentByField[field]
@@ -42,11 +47,13 @@ const countStudents = async (path) => {
         );
       }
     }
+    return response;
   } catch (err) {
     if (err.code === 'ENOENT') {
       throw new Error('Cannot load the database');
     } else {
       console.log(err);
+      return '';
     }
   }
 };
