@@ -13,7 +13,7 @@ const app = http.createServer(async (req, res) => {
       .then((data) => {
         res.writeHead(200, { 'Content-type': 'text/plain' });
         res.write('This is the list of our students\n');
-        res.end(data);
+        res.end(data.trim());
       })
       .catch((err) => {
         res.writeHead(404, { 'Content-type': 'text/plain' });
