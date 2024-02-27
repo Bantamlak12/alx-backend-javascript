@@ -58,12 +58,13 @@ app.get('/', (req, res) => {
   res.status(200).send('Hello Holberton School!');
 });
 app.get('/students', async (req, res) => {
+  const msg = 'This is the list of our students\n';
   try {
     const data = await countStudents(DATABASE_PATH);
 
-    res.status(200).send(`This is the list of our students\n${data.trim()}`);
+    res.status(200).send(`${msg}\n${data.trim()}`);
   } catch (err) {
-    res.send(err.message);
+    res.end(`${msg}${err.message}`);
   }
 });
 
