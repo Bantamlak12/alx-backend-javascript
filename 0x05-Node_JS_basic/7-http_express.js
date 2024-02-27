@@ -39,7 +39,7 @@ const countStudents = async (DATABASE_PATH) => {
 
     let response = `Number of students: ${totalStudent}\n`;
     for (const field in studentByField) {
-      if (field) {
+      if (Object.prototype.hasOwnProperty.call(studentByField, field)) {
         response += `Number of students in ${field}: ${
           studentByField[field]
         }. List: ${names[field].join(', ')}\n`;
@@ -62,14 +62,12 @@ app.get('/students', async (req, res) => {
   try {
     const data = await countStudents(DATABASE_PATH);
 
-    res.status(200).send(`${msg}\n${data.trim()}`);
+    res.status(200).send(`${msg}${data.trim()}`);
   } catch (err) {
     res.end(`${msg}${err.message}`);
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`App is listening on port: ${PORT}`);
-});
+app.listen(PORT);
 
 module.exports = app;
