@@ -58,15 +58,16 @@ const app = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
+    const msg = 'This is the list of our students\n';
     countStudents(DATABASE_PATH)
       .then((data) => {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.write('This is the list of our students\n');
+        res.write(msg);
         res.end(data.trim());
       })
       .catch((err) => {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end(err);
+        res.end(`${msg}Error: ${err.message}`);
       });
   }
 });
