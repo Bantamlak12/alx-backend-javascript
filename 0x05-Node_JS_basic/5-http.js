@@ -38,7 +38,7 @@ const countStudents = async (DATABASE_PATH) => {
 
     let response = `Number of students: ${totalStudent}\n`;
     for (const field in studentByField) {
-      if (field) {
+      if (Object.prototype.hasOwnProperty.call(studentByField, field)) {
         response += `Number of students in ${field}: ${
           studentByField[field]
         }. List: ${names[field].join(', ')}\n`;
