@@ -23,7 +23,7 @@ describe('sendPaymentRequestToApi', function () {
   });
 
   it('should log the correct total', () => {
-    const consoleSpy = sinon.spy(console, 'log');
+    const consoleSpy = sinon.stub(console, 'log');
     const totalAmount = 100;
     const totalShipping = 20;
 
