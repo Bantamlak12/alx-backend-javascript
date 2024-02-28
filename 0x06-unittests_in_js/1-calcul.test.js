@@ -16,13 +16,13 @@ describe('calculateNumber', function () {
 
   describe('SUBTRACT', function () {
     it('It should return substraction of rounded numbers', function () {
-      assert.strictEqual(calculateNumber('SUBTRACT', 1, 3), 2);
-      assert.strictEqual(calculateNumber('SUBTRACT', 1, 3.7), 3);
-      assert.strictEqual(calculateNumber('SUBTRACT', 1.2, 3.7), 3);
-      assert.strictEqual(calculateNumber('SUBTRACT', 1.5, 3.7), 2);
-      assert.strictEqual(calculateNumber('SUBTRACT', 5.8, 2.4), -4);
-      assert.strictEqual(calculateNumber('SUBTRACT', 3.3, 2.4), -1);
-      assert.strictEqual(calculateNumber('SUBTRACT', 2, 0), -2);
+      assert.strictEqual(calculateNumber('SUBTRACT', 1, 3), -2);
+      assert.strictEqual(calculateNumber('SUBTRACT', 1, 3.7), -3);
+      assert.strictEqual(calculateNumber('SUBTRACT', 1.2, 3.7), -3);
+      assert.strictEqual(calculateNumber('SUBTRACT', 1.5, 3.7), -2);
+      assert.strictEqual(calculateNumber('SUBTRACT', 5.8, 2.4), 4);
+      assert.strictEqual(calculateNumber('SUBTRACT', 3.3, 2.4), 1);
+      assert.strictEqual(calculateNumber('SUBTRACT', 2, 0), 2);
     });
   });
 
