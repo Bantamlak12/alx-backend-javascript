@@ -6,7 +6,7 @@ const Utils = {
     if (type === 'SUM') {
       return roundedA + roundedB;
     } else if (type === 'SUBTRACT') {
-      return roundedB - roundedA;
+      return roundedA - roundedB;
     } else if (type === 'DIVIDE') {
       if (roundedB == 0) {
         return 'Error';
