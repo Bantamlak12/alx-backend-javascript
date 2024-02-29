@@ -5,7 +5,7 @@ describe('getPaymentTokenFromAPI', function () {
   it('should return a promise', function () {
     getPaymentTokenFromAPI(true)
       .then((result) => {
-        expect(result).to.equal(`Promise { <pending> }`);
+        expect(result).to.deep.equal(`Promise { <pending> }`);
         done();
       })
       .catch((err) => {
